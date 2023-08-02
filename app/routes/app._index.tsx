@@ -20,7 +20,7 @@ import {
   Link,
 } from "@shopify/polaris";
 
-import shopify, { authenticate } from "~/shared/shopify.server.ts";
+import { authenticate } from "~/shared/shopify.server.ts";
 
 export const loader = async ({ request }: LoaderArgs) => {
   const { session } = await authenticate.admin(request);

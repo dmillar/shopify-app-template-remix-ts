@@ -2,7 +2,7 @@
 
 name = "template-app-ts"
 client_id = "f9c63bc752b6261c333730e08996fe36"
-application_url = "https://oz-chubby-flat-sort.trycloudflare.com"
+application_url = "https://florists-activated-extend-caused.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://oz-chubby-flat-sort.trycloudflare.com/auth/callback",
-  "https://oz-chubby-flat-sort.trycloudflare.com/auth/shopify/callback",
-  "https://oz-chubby-flat-sort.trycloudflare.com/api/auth/callback"
+  "https://florists-activated-extend-caused.trycloudflare.com/auth/callback",
+  "https://florists-activated-extend-caused.trycloudflare.com/auth/shopify/callback",
+  "https://florists-activated-extend-caused.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

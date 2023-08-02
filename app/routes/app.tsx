@@ -2,7 +2,8 @@ import React from "react";
 import { type LoaderArgs, json, type HeadersArgs } from "@remix-run/node";
 import { Link, Outlet, useLoaderData, useRouteError } from "@remix-run/react";
 import { AppProvider as PolarisAppProvider } from "@shopify/polaris";
-import polarisStyles from "@shopify/polaris/build/esm/styles.css";
+import polarisStyles from "@shopify/polaris/build/esm/styles.css"
+
 import { boundary } from "@shopify/shopify-app-remix";
 import { authenticate } from "~/shared/shopify.server.ts";
 import { type LinkLikeComponent } from "@shopify/polaris/build/ts/src/utilities/link/types.js";
