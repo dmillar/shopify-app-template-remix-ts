@@ -1,7 +1,6 @@
 # Shopify App Template - Remix (Typescript)
 
-This is a Typescript fork of the [Remix](https://remix.run) template for creating new Shopify apps via the Shopify CLI. There are some opinions integrated into this template
-outlined below. The [official template is here](https://github.com/Shopify/shopify-app-template-remix). Please submit bugs or pull requests!
+This is a Typescript fork of the [Remix](https://remix.run) template used by the Shopify CLI to create new apps. There are some opinions integrated into this template outlined below. The [official template is here](https://github.com/Shopify/shopify-app-template-remix). Please submit bugs or pull requests!
 
 ## Opinions & Decisions
 
