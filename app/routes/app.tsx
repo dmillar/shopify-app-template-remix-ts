@@ -4,7 +4,7 @@ import { Link, Outlet, useLoaderData, useRouteError } from "@remix-run/react";
 import { AppProvider as PolarisAppProvider } from "@shopify/polaris";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css";
 import { boundary } from "@shopify/shopify-app-remix";
-import { authenticate } from "~/shared/shopify.server.js";
+import { authenticate } from "~/shared/shopify.server.ts";
 import { type LinkLikeComponent } from "@shopify/polaris/build/ts/src/utilities/link/types.js";
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
@@ -12,7 +12,7 @@ export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 export async function loader({ request }: LoaderArgs) {
   await authenticate.admin(request);
   return json({
-    polarisTranslations: import("~/locales/en.json"),
+    polarisTranslations: import("~/shared/locales/en.json"),
     apiKey: process.env.SHOPIFY_API_KEY,
   });
 }
@@ -33,6 +33,7 @@ export default function App() {
         <Link to="/app/additional">Additional page</Link>
       </ui-nav-menu>
       <PolarisAppProvider
+        i18n={polarisTranslations}
         linkComponent={RemixPolarisLink as LinkLikeComponent}
       >
         <Outlet />

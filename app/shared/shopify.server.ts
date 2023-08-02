@@ -1,5 +1,4 @@
 import 'dotenv/config'
-//import { shopifyApp } from "@shopify/shopify-app-express";
 
 import "@shopify/shopify-app-remix/adapters/node";
 import {
@@ -11,7 +10,7 @@ import {
 import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prisma";
 import { restResources } from "@shopify/shopify-api/rest/admin/2023-07";
 
-import prisma from "~/shared/db.server.js";
+import prisma from "~/shared/db.server.ts";
 
 const shopify = shopifyApp({
   apiKey: process.env.SHOPIFY_API_KEY,

@@ -1,20 +1,20 @@
 import * as fs from "node:fs";
-import 'dotenv/config'
+
 import { createRequestHandler } from "@remix-run/express";
 import { broadcastDevReady, installGlobals } from "@remix-run/node";
 import chokidar from "chokidar";
 import compression from "compression";
 import express from "express";
 import morgan from "morgan";
+import remixConfig from "../remix.config.js";
 
 installGlobals();
 
-const BUILD_PATH = `${process.cwd()}/.remix/build/server/entryServer.js`;
+const BUILD_PATH = `${process.cwd()}/${remixConfig.serverBuildPath}`;
 /**
  * @type { import('@remix-run/node').ServerBuild | Promise<import('@remix-run/node').ServerBuild> }
  */
 let build = await import(BUILD_PATH);
-
 
 const app = express();
 
@@ -29,8 +29,8 @@ app.disable("x-powered-by");
 
 // Remix fingerprints its assets so we can cache forever.
 app.use(
-  "/build",
-  express.static(`${process.cwd()}/.remix/build/client`, { immutable: true, maxAge: "1y" })
+  remixConfig.publicPath,
+  express.static(`${process.cwd()}/${remixConfig.assetsBuildDirectory}`, { immutable: true, maxAge: "1y" })
 );
 
 // Everything else (like favicon.ico) is cached for an hour. You may want to be

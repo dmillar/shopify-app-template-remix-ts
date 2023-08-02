@@ -1,5 +1,5 @@
-import { authenticate } from "~/shared/shopify.server.js";
-import prisma from "~/shared/db.server.js";
+import { authenticate } from "~/shared/shopify.server.ts";
+import prisma from "~/shared/db.server.ts";
 import { type ActionArgs } from "@remix-run/node";
 
 export const action = async ({ request }: ActionArgs) => {

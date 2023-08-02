@@ -13,12 +13,12 @@ if (
 }
 
 /** @type {import('@remix-run/dev').AppConfig} */
-module.exports = {
+export default {
   ignoredRouteFiles: ["**/.*"],
-  cacheDirectory: "./.remix/cache",
   appDirectory: "app",
+  cacheDirectory: "./.remix/cache",
   assetsBuildDirectory: "./.remix/build/client",
-  serverBuildPath: "./.remix/build/server/entryServer.js",
+  serverBuildPath: "./.remix/build/server/entry-server.js",
   publicPath: "/build/",
   serverModuleFormat: "esm",
   future: {

@@ -13,7 +13,7 @@ import {
 import { Form, useActionData, useLoaderData } from "@remix-run/react";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css";
 
-import { login } from "~/shared/shopify.server.js";
+import { login } from "~/shared/shopify.server.ts";
 import { loginErrorMessage } from "./error.server.tsx";
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
