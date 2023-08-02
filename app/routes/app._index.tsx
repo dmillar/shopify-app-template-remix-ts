@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { json } from "@remix-run/node";
+import { type ActionArgs, type LoaderArgs, json } from "@remix-run/node";
 import {
   useActionData,
   useLoaderData,
@@ -20,15 +20,15 @@ import {
   Link,
 } from "@shopify/polaris";
 
-import { authenticate } from "../shopify.server";
+import shopify, { authenticate } from "~/shared/shopify.server.js";
 
-export const loader = async ({ request }) => {
+export const loader = async ({ request }: LoaderArgs) => {
   const { session } = await authenticate.admin(request);
 
   return json({ shop: session.shop.replace(".myshopify.com", "") });
 };
 
-export async function action({ request }) {
+export async function action({ request }: ActionArgs) {
   const { admin } = await authenticate.admin(request);
 
   const color = ["Red", "Orange", "Yellow", "Green"][
@@ -97,11 +97,11 @@ export default function Index() {
 
   return (
     <Page>
-      <ui-title-bar title="Remix app template">
+      {/* <ui-title-bar title="Remix app template">
         <button variant="primary" onClick={generateProduct}>
           Generate a product
         </button>
-      </ui-title-bar>
+      </ui-title-bar> */}
       <VerticalStack gap="5">
         <Layout>
           <Layout.Section>

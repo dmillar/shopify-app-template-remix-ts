@@ -15,8 +15,12 @@ if (
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
   ignoredRouteFiles: ["**/.*"],
+  cacheDirectory: "./.remix/cache",
   appDirectory: "app",
-  serverModuleFormat: "cjs",
+  assetsBuildDirectory: "./.remix/build/client",
+  serverBuildPath: "./.remix/build/server/entryServer.js",
+  publicPath: "/build/",
+  serverModuleFormat: "esm",
   future: {
     v2_errorBoundary: true,
     v2_headers: true,
